@@ -50,12 +50,20 @@ class _ApiExampleState extends State<ApiExample> {
               itemCount: data.length,
               itemBuilder: (context, index) {
                 final item = data[index];
-                return Card(
-                  elevation: 4,
-                  margin: const EdgeInsets.symmetric(vertical: 8),
-                  shape: RoundedRectangleBorder(
+                return Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blueAccent.withOpacity(0.2),
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                        offset: const Offset(2, 4),
+                      ),
+                    ],
                   ),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
                   child: ListTile(
                     contentPadding: const EdgeInsets.all(16),
                     title: Text(
